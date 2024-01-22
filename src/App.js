@@ -1,17 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import GameCreationScreen from './components/GameCerate.js';  // GameCreate yazım hatası düzeltildi
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import GameCreationScreen from './components/GameCreate';
 import GameList from './components/GameList';
-import GameScreen from './components/GamaScreen';
+import GameScreen from './components/GameScreen';
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/GameCreation" />} />
-        <Route path="/GameCreation" element={<GameCreationScreen />} />
-        <Route path="/game/list" element={<GameList />} />
-        <Route path="/game/screen" element={<GameScreen />} />
+        <Route path="/" element={<Navigate to="/GameCreate" />} />
+        <Route path="/GameCreate" element={<GameCreationScreen />} />
+        <Route path="/GameList" element={<GameList />} />
+        <Route path="/GameScreen" element={<GameScreen />} />
       </Routes>
     </Router>
   );
