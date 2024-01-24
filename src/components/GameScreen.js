@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./GameScreen.css"
 
 const GameScreen = () => {
   const navigate = useNavigate();
@@ -203,16 +204,19 @@ const GameScreen = () => {
     <div style={containerStyle}>
       <h2>Game Screen</h2>
       <p>{`next player : ${currentPlayer === 1 ? userName : 'computer'}`}</p>
-      <div style={boardStyle}>
+      <div className='backk' style={boardStyle}>
         {board.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
             <div
+            className='cells'
+
               key={`${rowIndex}-${colIndex}`}
               style={{ ...cellStyle, backgroundColor: colors.bgColor }}
               onClick={() => dropDisk(colIndex)}
             >
               {cell !== 0 && (
                 <div
+                className='anim'
                   style={{
                     width: '40px',
                     height: '40px',

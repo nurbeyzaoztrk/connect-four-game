@@ -1,0 +1,19 @@
+.backk{
+    border: 2px solid black;
+    padding: 3px;
+   background-color:rgb(0, 0, 0);
+   box-shadow:0px 0px 40px 15px #888888;
+   margin:30px;
+}
+@keyframes dropPieceAnimation {    
+     0% {       transform: translateY(-400px);    
+     }    
+      100% {       transform: translateY(0);    
+     }   
+    }
+.cells{
+border-radius: 15px;
+border: 2px solid black;
+}
+.anim{    animation: dropPieceAnimation 0.6s ease-out;
+}
