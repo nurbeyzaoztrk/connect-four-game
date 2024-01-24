@@ -16,10 +16,11 @@ const GameList = () => {
         <ul>
           {games.map((game, index) => (
             <li key={index}>
-              <strong>User Name:</strong> {game.userName}, &nbsp;
-              <strong>Game Name:</strong> {game.gameName}, &nbsp;
-              <strong>User Color:</strong> {game.userColor}, &nbsp;
-              <strong>Board Color:</strong> {game.boardColor}
+              <strong>User Name:</strong> {game.userName},{' '}
+              <strong>Game Name:</strong> {game.gameName},{' '}
+              <strong>User Color:</strong> {game.userColor},{' '}
+              <strong>Board Color:</strong> {game.boardColor},{' '}
+              <strong>Winner:</strong> {game.winner}
             </li>
           ))}
         </ul>

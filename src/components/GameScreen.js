@@ -158,9 +158,32 @@ const GameScreen = () => {
       window.location.reload();
     } else if (winner && winner !== 0) {
       // There is a winner
-      navigate('/GameScreen');
+
+      // Save the winner's username to localStorage
+      const winnerName = currentPlayer === 1 ? userName : 'computer';
+
+      // Get the existing games from localStorage
+      const storedGames = JSON.parse(localStorage.getItem('gameList')) || [];
+
+      // Create a new game object
+      const newGame = {
+        userName,
+        userColor,
+        boardColor,
+        gameName: `Game ${storedGames.length + 1}`, // You might want to adjust how you generate game names
+        winner: winnerName,
+      };
+
+      // Add the new game to the existing games array
+      const updatedGames = [...storedGames, newGame];
+
+      // Save the updated game list to localStorage
+      localStorage.setItem('gameList', JSON.stringify(updatedGames));
+
+      // Navigate to the GameList page
+      navigate('/GameList');
     }
-  }, [winner, navigate]);
+  }, [winner, navigate, userName, userColor, boardColor, currentPlayer]);
 
   const colors = {
     Player1: userColor,
@@ -208,15 +231,14 @@ const GameScreen = () => {
         {board.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
             <div
-            className='cells'
-
+              className='cells'
               key={`${rowIndex}-${colIndex}`}
               style={{ ...cellStyle, backgroundColor: colors.bgColor }}
               onClick={() => dropDisk(colIndex)}
             >
               {cell !== 0 && (
                 <div
-                className='anim'
+                  className='anim'
                   style={{
                     width: '40px',
                     height: '40px',
