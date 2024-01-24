@@ -1,5 +1,3 @@
-// components/GameList.js
-
 import React, { useEffect, useState } from 'react';
 
 const GameList = () => {
@@ -9,7 +7,7 @@ const GameList = () => {
     // localStorage'dan oyun listesini çek
     const storedGames = JSON.parse(localStorage.getItem('gameList')) || [];
     setGames(storedGames);
-  }, [games]); // games state'i değiştiğinde useEffect'i tetikle
+  }, []); // Sadece component ilk render olduğunda çalışması için boş dependency array kullanıldı
 
   return (
     <div>
@@ -17,7 +15,12 @@ const GameList = () => {
       {games.length > 0 ? (
         <ul>
           {games.map((game, index) => (
-            <li key={index}>{game}</li>
+            <li key={index}>
+              <strong>User Name:</strong> {game.userName}, &nbsp;
+              <strong>Game Name:</strong> {game.gameName}, &nbsp;
+              <strong>User Color:</strong> {game.userColor}, &nbsp;
+              <strong>Board Color:</strong> {game.boardColor}
+            </li>
           ))}
         </ul>
       ) : (

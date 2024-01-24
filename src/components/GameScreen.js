@@ -150,13 +150,13 @@ const GameScreen = () => {
 
   useEffect(() => {
     if (winner === 0) {
-      // Beraberlik durumu
+      // Draw status
       setBoard(createEmptyBoard());
       setCurrentPlayer(1);
-      // Sayfayı yenile
+      // Refresh page
       window.location.reload();
     } else if (winner && winner !== 0) {
-      // Kazanan var
+      // There is a winner
       navigate('/GameScreen');
     }
   }, [winner, navigate]);
@@ -194,6 +194,11 @@ const GameScreen = () => {
     cursor: 'pointer',
   };
 
+  const redirectToGameList = () => {
+    // Redirect to the GameList page
+    navigate('/GameList');
+  };
+
   return (
     <div style={containerStyle}>
       <h2>Game Screen</h2>
@@ -222,6 +227,9 @@ const GameScreen = () => {
       </div>
       {winner && winner !== 0 && <p>{`Player  ${winner === 1 ? userName : 'computer'} wins!`}</p>}
       {winner === 0 && <p> the game ended in a draw !</p>}
+
+      {/* Add the Redirect to GameList button */}
+      <button onClick={redirectToGameList}>Go to Game List</button>
     </div>
   );
 };

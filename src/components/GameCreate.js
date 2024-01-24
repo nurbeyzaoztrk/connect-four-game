@@ -4,6 +4,7 @@ import './GameCreate.css';
 import { useNavigate } from 'react-router-dom';
 
 const GameCreate = ({ onGameCreated }) => {
+  const [games, setGames] = useState(JSON.parse(localStorage.getItem('gameList')) || []);
   const [userName, setUserName] = useState('');
   const [userColor, setUserColor] = useState(localStorage.getItem('userColor') || '#ff5733');
   const [boardColor, setBoardColor] = useState(localStorage.getItem('boardColor') || '#33ff57');
@@ -20,17 +21,25 @@ const GameCreate = ({ onGameCreated }) => {
 
   const createGame = () => {
     if (!userName || !gameName) {
-      // Kullanıcı adı veya oyun adı girilmediyse uyarı göster ve işlemi durdur
+      // Show a warning and stop the process if no username or game name has been entered
       alert("Please enter username and game name. ");
       return;
     }
 
-    console.log('Yeni oyun oluşturuldu:', {
+    const newGame = {
       userName,
       userColor,
       boardColor,
       gameName,
-    });
+    };
+
+    // Add the new game to the existing games array
+    setGames((prevGames) => [...prevGames, newGame]);
+
+    console.log('Yeni oyun oluşturuldu:', newGame);
+
+    // Save the updated games array to local storage
+    localStorage.setItem('gameList', JSON.stringify([...games, newGame]));
 
     // Navigate to the GameScreen after creating the game, passing the user name as state
     navigate('/GameScreen', { state: { userName } });
@@ -57,7 +66,7 @@ const GameCreate = ({ onGameCreated }) => {
             </label>
             <br />
             <label>
-              Game Nameı:
+              Game Name:
               <input
                 type="text"
                 value={gameName}

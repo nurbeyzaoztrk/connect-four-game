@@ -37,12 +37,12 @@ const Denetim = () => {
   const [previousPath, setPreviousPath] = useState('');
 
   useEffect(() => {
-    // Sayfa değiştiğinde veya sayfa tekrar yüklendiğinde logla
+    // Log when the page changes or reloads
     if (location.pathname !== previousPath || performance.navigation.type === 1) {
       console.log("Bir önceki sayfa: " + previousPath);
       setPreviousPath(location.pathname);
 
-      // Sayfa tekrar yüklendiğinde ayrı bir log yap
+      // Make a separate log when the page is reloaded
       if (performance.navigation.type === 1) {
         console.log("Sayfa tekrar yüklendi");
       }
