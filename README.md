@@ -10,7 +10,8 @@ Welcome to the Connect Four game project! This is a simple yet engaging game whe
 
 ### 1. Create Game Screen
 
-This screen allows the user to set up a new game. Here, the user needs to input their username and choose a game name. Additionally, the user can select their preferred color and board color. The entered data is stored in the localStorage for use in the subsequent screens.
+This screen allows the user to set up a new game. Here, the user needs to input their username and choose a game name. Additionally, the user can select their preferred color and board color. The entered data is stored in the localStorage for use in the subsequent screens. 
+<br/>
 ![CreateGame](public/gameCreate.png)
 
 ### 2. Game List Screen
