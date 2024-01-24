@@ -12,7 +12,7 @@ Welcome to the Connect Four game project! This is a simple yet engaging game whe
 
 This screen allows the user to set up a new game. Here, the user needs to input their username and choose a game name. Additionally, the user can select their preferred color and board color. The entered data is stored in the localStorage for use in the subsequent screens. 
 <br/>
-<img width="300" alt="gamecreationscreen" src="https://hizliresim.com/4ggsrz2">
+<img width="300" alt="gamecreationscreen" src="[url=https://hizliresim.com/4ggsrz2][img]https://i.hizliresim.com/4ggsrz2.png[/img][/url]">
 
 ### 2. Game List Screen
 
