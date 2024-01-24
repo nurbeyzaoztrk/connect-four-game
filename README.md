@@ -1,74 +1,32 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Connect Four Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Connect Four game project! This is a simple yet engaging game where you can play against the computer. The project consists of three screens: Create Game Screen, Game List Screen, and Game Screen.
 
-## Available Scripts
+## Screens
 
-In the project directory, you can run:
+### 1. Create Game Screen
 
-### `npm start`
+This screen allows the user to set up a new game. Here, the user needs to input their username and choose a game name. Additionally, the user can select their preferred color and board color. The entered data is stored in the localStorage for use in the subsequent screens.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Game List Screen
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+In this screen, the project lists the details of each player stored in the localStorage. Users can view their past game information and make informed decisions about their next moves.
 
-### `npm test`
+### 3. Game Screen
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The heart of the project lies in the Game Screen, where the Connect Four game board is displayed. The current player's turn is highlighted, and the winner is announced when a player succeeds. The page is refreshed if the game ends in a draw.
 
-### `npm run build`
+## Project Details
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Prompt Engineering System:** The game is developed using the prompt engineering system, and a robust algorithmic logic ensures a challenging gaming experience. This is a no-code project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Technology:** The project is implemented as a React application. To start the project, run the following commands:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Play
+Navigate to the Create Game Screen and enter your username and game name.
+Choose your preferred colors for the player and the board.
+Proceed to the Game List Screen to review past game information.
+Start a new game or resume an existing one from the list on the Game List Screen.
+Enjoy playing Connect Four on the Game Screen!
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# connect-four-game
->>>>>>> bea034a24b443c43a6f8f215627e53808f6b7040
+Feel free to contribute to the project or report any issues. Happy gaming!

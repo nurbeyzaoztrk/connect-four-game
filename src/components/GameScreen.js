@@ -173,7 +173,7 @@ const GameScreen = () => {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: "#fff",
+    backgroundColor: "#fffC",
   };
 
   const boardStyle = {
@@ -196,8 +196,8 @@ const GameScreen = () => {
 
   return (
     <div style={containerStyle}>
-      <h2>Oyun Ekranı</h2>
-      <p>{`Sıradaki Oyuncu: ${currentPlayer === 1 ? userName : 'Bilgisayar'}`}</p>
+      <h2>Game Screen</h2>
+      <p>{`next player : ${currentPlayer === 1 ? userName : 'computer'}`}</p>
       <div style={boardStyle}>
         {board.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
@@ -220,8 +220,8 @@ const GameScreen = () => {
           ))
         )}
       </div>
-      {winner && winner !== 0 && <p>{`Oyuncu ${winner === 1 ? userName : 'Bilgisayar'} kazandı!`}</p>}
-      {winner === 0 && <p> Oyun berabere bitti!</p>}
+      {winner && winner !== 0 && <p>{`Player  ${winner === 1 ? userName : 'computer'} wins!`}</p>}
+      {winner === 0 && <p> the game ended in a draw !</p>}
     </div>
   );
 };

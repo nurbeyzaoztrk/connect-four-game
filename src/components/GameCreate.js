@@ -1,8 +1,9 @@
+// GameCreate.js
 import React, { useState, useEffect } from 'react';
 import './GameCreate.css';
 import { useNavigate } from 'react-router-dom';
 
-const GameCreate = () => {
+const GameCreate = ({ onGameCreated }) => {
   const [userName, setUserName] = useState('');
   const [userColor, setUserColor] = useState(localStorage.getItem('userColor') || '#ff5733');
   const [boardColor, setBoardColor] = useState(localStorage.getItem('boardColor') || '#33ff57');
@@ -20,7 +21,7 @@ const GameCreate = () => {
   const createGame = () => {
     if (!userName || !gameName) {
       // Kullanıcı adı veya oyun adı girilmediyse uyarı göster ve işlemi durdur
-      alert("Lütfen kullanıcı adı ve oyun adı girin.");
+      alert("Please enter username and game name. ");
       return;
     }
 
@@ -33,6 +34,9 @@ const GameCreate = () => {
 
     // Navigate to the GameScreen after creating the game, passing the user name as state
     navigate('/GameScreen', { state: { userName } });
+
+    // Call the onGameCreated function to update the App state
+    onGameCreated();
   };
 
   const backgroundImageUrl = '/bg.png';
@@ -41,10 +45,10 @@ const GameCreate = () => {
     <div style={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: 'cover', height: '100vh', display: "flex", justifyContent: "center", alignItems: "center" }}>
       <div className="yarı-saydam-div">
         <center>
-          <h2>Oyun Oluşturma Ekranı</h2>
+          <h2>game creation screen</h2>
           <form>
             <label>
-              Kullanıcı Adı:
+              User Name:
               <input
                 type="text"
                 value={userName}
@@ -53,7 +57,7 @@ const GameCreate = () => {
             </label>
             <br />
             <label>
-              Oyun Adı:
+              Game Nameı:
               <input
                 type="text"
                 value={gameName}
@@ -62,7 +66,7 @@ const GameCreate = () => {
             </label>
             <br />
             <label>
-              Kullanıcı Rengi:
+              User Color:
               <input
                 type="color"
                 value={userColor}
@@ -71,7 +75,7 @@ const GameCreate = () => {
             </label>
             <br />
             <label>
-              Tahta Rengi:
+              Board Color:
               <input
                 type="color"
                 value={boardColor}
@@ -80,7 +84,7 @@ const GameCreate = () => {
             </label>
             <br />
             <button type="button" onClick={createGame}>
-              Oyunu Oluştur
+            create the game 
             </button>
           </form>
         </center>
